@@ -1,33 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import * as ActionCreator from "./../../Actions";
 
 class Counter extends Component {
-  //   constructor() {
-  //     super();
-  //   }
-  //   state = {
-  //     initalValue: 0,
-  //     countValue: 0
-  //   };
-  /*
-  incrementCounter = () => {
-    // const { countValue } = this.state;
-    // store.dispatch({ type: "INCREMENT" });
-    // this.setState({ countValue: countValue + 1 });
-    // console.log("incrementing");
-  };
-  decrementCounter = () => {
-    // const { countValue } = this.state;
-    // store.dispatch({ type: "DECREMENT" });
-    // this.setState({ countValue: countValue - 1 });
-    // console.log("decrementing");
-  };
-
-  resetCounter = () => {
-    // this.setState({ countValue: this.state.initalValue });
-    // store.dispatch({ type: "RESET" });
-  };
-  */
   render() {
     return (
       <React.Fragment>
@@ -57,13 +32,13 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
   incrementCounter: () => {
-    dispatch({ type: "INCREMENT" });
+    dispatch(ActionCreator.incrementCounter());
   },
   decrementCounter: () => {
-    dispatch({ type: "DECREMENT" });
+    dispatch(ActionCreator.decrementCounter());
   },
   resetCounter: () => {
-    dispatch({ type: "RESET" });
+    dispatch(ActionCreator.resetCounter());
   }
 });
 
