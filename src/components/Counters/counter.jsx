@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import * as ActionCreator from "./../../Actions";
+import PropTypes from "prop-types";
 
 class Counter extends Component {
   render() {
@@ -25,6 +26,10 @@ class Counter extends Component {
     );
   }
 }
+
+Counter.propTypes = {
+  counter: PropTypes.number
+};
 
 const mapStateToProps = state => {
   return { counter: state };
